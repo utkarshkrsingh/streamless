@@ -1,6 +1,6 @@
 # Streamless
 
-Streamless is a synchronized video playback system that enables multiple users to watch videos together without streaming or uploading any media.
+Streamless is a synchronized video playback service that enables multiple users to watch videos together without streaming or uploading any media.
 
 Each participant plays the video locally on their own machine. Playback synchronization is achieved by exchanging control and timing events over persistent WebSocket connections. A single host maintains authoritative control over playback state to ensure deterministic synchronization across all clients.
 
