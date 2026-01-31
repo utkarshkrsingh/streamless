@@ -2,7 +2,7 @@ package routes
 
 import (
 	"github.com/gin-gonic/gin"
-	"github.com/utkarshkrsingh/goparty/internal/middleware"
+	"github.com/utkarshkrsingh/streamless/internal/middleware"
 )
 
 func HandleRoutes(e *gin.Engine) {

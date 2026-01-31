@@ -3,7 +3,7 @@ package db
 import (
 	"time"
 
-	"github.com/utkarshkrsingh/goparty/internal/initializer"
+	"github.com/utkarshkrsingh/streamless/internal/initializer"
 )
 
 type Users struct {

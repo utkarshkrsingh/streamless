@@ -1,4 +1,4 @@
-module github.com/utkarshkrsingh/goparty
+module github.com/utkarshkrsingh/streamless
 
 go 1.24.5
 

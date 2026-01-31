@@ -8,8 +8,8 @@ import (
 
 	"github.com/gin-gonic/gin"
 	"github.com/golang-jwt/jwt/v5"
-	"github.com/utkarshkrsingh/goparty/internal/db"
-	"github.com/utkarshkrsingh/goparty/internal/initializer"
+	"github.com/utkarshkrsingh/streamless/internal/db"
+	"github.com/utkarshkrsingh/streamless/internal/initializer"
 )
 
 func RequireAuth(ctx *gin.Context) {

@@ -8,8 +8,8 @@ import (
 	"time"
 
 	"github.com/gin-gonic/gin"
-	"github.com/utkarshkrsingh/goparty/internal/db"
-	"github.com/utkarshkrsingh/goparty/internal/utils"
+	"github.com/utkarshkrsingh/streamless/internal/db"
+	"github.com/utkarshkrsingh/streamless/internal/utils"
 	"golang.org/x/crypto/bcrypt"
 )
 

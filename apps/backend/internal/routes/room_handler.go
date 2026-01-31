@@ -5,8 +5,8 @@ import (
 	"net/http"
 
 	"github.com/gin-gonic/gin"
-	"github.com/utkarshkrsingh/goparty/internal/db"
-	"github.com/utkarshkrsingh/goparty/internal/utils"
+	"github.com/utkarshkrsingh/streamless/internal/db"
+	"github.com/utkarshkrsingh/streamless/internal/utils"
 )
 
 func newRoomCode(ctx *gin.Context) {

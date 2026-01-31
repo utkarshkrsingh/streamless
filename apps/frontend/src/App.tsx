@@ -43,7 +43,7 @@ export default function App() {
                     onClick={() => setView("home")}
                     className={`cursor-pointer font-sans text-xl tracking-tight md:text-2xl font-bold ${darkMode ? "text-cyan-400" : "text-blue-600"}`}
                 >
-                    GoParty
+                    Streamless
                 </h1>
                 <nav className="flex items-center space-x-2 md:space-x-4">
                     {loading ? (
@@ -104,8 +104,8 @@ export default function App() {
                 <p
                     className={`font-sans text-lg ${darkMode ? "text-gray-600" : "text-gray-500"} `}
                 >
-                    &copy; {new Date().getFullYear()} GoParty. Built with React
-                    and Go
+                    &copy; {new Date().getFullYear()} Streamless. Built with
+                    React and Go
                 </p>
             </footer>
         </div>

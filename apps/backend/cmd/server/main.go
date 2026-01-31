@@ -8,8 +8,8 @@ import (
 
 	"github.com/gin-contrib/cors"
 	"github.com/gin-gonic/gin"
-	"github.com/utkarshkrsingh/goparty/internal/initializer"
-	"github.com/utkarshkrsingh/goparty/internal/routes"
+	"github.com/utkarshkrsingh/streamless/internal/initializer"
+	"github.com/utkarshkrsingh/streamless/internal/routes"
 )
 
 func init() {
