@@ -1,6 +1,6 @@
-# SynLuma: Your shared screen, perfectly timed.
+# Streamless: Sync, Don't Stream.
 
-SynLuma is a synchronized video playback service that enables multiple users to watch videos together without streaming or uploading any media.
+Streamless is a synchronized video playback service that enables multiple users to watch videos together without streaming or uploading any media.
 
 Each participant plays the video locally on their own machine. Playback synchronization is achieved by exchanging control and timing events over persistent WebSocket connections. A single host maintains authoritative control over playback state to ensure deterministic synchronization across all clients.
 
@@ -20,7 +20,7 @@ Each participant plays the video locally on their own machine. Playback synchron
 
 ## Architecture Overview
 
-SynLuma uses a client–server model with persistent WebSocket connections.
+Streamless uses a client–server model with persistent WebSocket connections.
 
 - The **host** acts as the authoritative source of playback state
 - **Clients** follow host-issued control and timing events
