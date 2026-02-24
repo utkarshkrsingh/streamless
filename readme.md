@@ -1,4 +1,4 @@
-# Streamless: Sync, Don't Stream.
+# Streamless: Sync Control, Not Content
 
 Streamless is a synchronized video playback service that enables multiple users to watch videos together without streaming or uploading any media.
 
@@ -70,7 +70,3 @@ Messages contain minimal metadata such as timestamps and playback offsets to red
 - Bandwidth-constrained or privacy-sensitive scenarios
 
 ---
-
-## Design Philosophy
-
-> Synchronize control, not content.

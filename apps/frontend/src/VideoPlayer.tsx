@@ -299,30 +299,29 @@ function VideoPlayer(props: VideoControlProps) {
     return (
         <div
             ref={containerRef}
-            className={`relative flex flex-col items-center justify-center ${isFullScreen ? "bg-black" : "bg-transparent"}`}
+            className={`relative flex flex-col items-center justify-center ${isFullScreen ? "bg-black w-full h-full" : "bg-transparent"}`}
             onMouseMove={resetControlsTimer}
             onTouchStart={resetControlsTimer}
         >
             {/* Video Container */}
             <div
-                className={`${isFullScreen ? "w-full rounded-none" : "w-8/10 rounded-xl"} relative overflow-hidden shadow-2xl bg-black`}
+                className={`${isFullScreen ? "w-full h-full rounded-none" : "w-8/10 rounded-xl"} relative overflow-hidden shadow-2xl bg-black`}
             >
                 <video
                     ref={videoRef}
                     src={videoUrl}
                     typeof={videoFile?.type}
-                    className="w-full"
+                    className={`object-contain block mx-auto ${isFullScreen ? "w-full h-full" : "max-w-full max-h-[80vh]"}`}
                     onClick={togglePlayPause}
                     onDoubleClick={toggleFullscreen}
                 />
 
                 {/* Controls Overlay */}
                 <div
-                    className={`${isOwner ? "visible" : "invisible"} absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/90 via-black/60 to-transparent p-4 transition-all duration-300 ${
-                        showControls
-                            ? "opacity-100 translate-y-0"
-                            : "opacity-0 translate-y-10 pointer-events-none"
-                    }`}
+                    className={`${isOwner ? "visible" : "invisible"} absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/90 via-black/60 to-transparent p-4 transition-all duration-300 ${showControls
+                        ? "opacity-100 translate-y-0"
+                        : "opacity-0 translate-y-10 pointer-events-none"
+                        }`}
                 >
                     {/* Progress Bar */}
                     <div className="mb-4 px-2">
@@ -355,11 +354,11 @@ function VideoPlayer(props: VideoControlProps) {
 
                     {/* Control Buttons */}
                     <div className="flex items-center justify-between px-2">
-                        <div className="flex items-center space-x-4">
+                        <div className="flex items-center space-x-1">
                             {/* Play/Pause */}
                             <button
                                 onClick={togglePlayPause}
-                                className="p-2 hover:bg-white/10 rounded-full transition-colors"
+                                className="p-1.5 hover:bg-white/10 rounded-full transition-colors"
                                 aria-label={isPlaying ? "Pause" : "Play"}
                             >
                                 {isPlaying ? (
@@ -372,7 +371,7 @@ function VideoPlayer(props: VideoControlProps) {
                             {/* Skip Backward */}
                             <button
                                 onClick={skipBackward}
-                                className="p-2 hover:bg-white/10 rounded-full transition-colors"
+                                className="p-1.5 hover:bg-white/10 rounded-full transition-colors"
                                 aria-label="Skip backward 10 seconds"
                             >
                                 <FiSkipBack className="w-5 h-5 text-white" />
@@ -381,17 +380,17 @@ function VideoPlayer(props: VideoControlProps) {
                             {/* Skip Forward */}
                             <button
                                 onClick={skipForward}
-                                className="p-2 hover:bg-white/10 rounded-full transition-colors"
+                                className="p-1.5 hover:bg-white/10 rounded-full transition-colors"
                                 aria-label="Skip forward 10 seconds"
                             >
                                 <FiSkipForward className="w-5 h-5 text-white" />
                             </button>
 
                             {/* Volume Control */}
-                            <div className="flex items-center space-x-2">
+                            <div className="group/vol flex items-center">
                                 <button
                                     onClick={toggleMute}
-                                    className="p-2 hover:bg-white/10 rounded-full transition-colors"
+                                    className="p-1.5 hover:bg-white/10 rounded-full transition-colors"
                                     aria-label={isMuted ? "Unmute" : "Mute"}
                                 >
                                     {isMuted || volume === 0 ? (
@@ -401,7 +400,7 @@ function VideoPlayer(props: VideoControlProps) {
                                     )}
                                 </button>
 
-                                <div className="w-24">
+                                <div className="ml-1 w-0 scale-x-0 origin-left opacity-0 group-hover/vol:w-24 group-hover/vol:scale-x-100 group-hover/vol:opacity-100 transition-all duration-300 ease-[cubic-bezier(0.4,0,0.2,1)] overflow-hidden">
                                     <input
                                         type="range"
                                         min="0"
@@ -419,7 +418,7 @@ function VideoPlayer(props: VideoControlProps) {
                             </div>
 
                             {/* Time Display */}
-                            <div className="text-white text-sm font-mono ml-4">
+                            <div className="text-white text-xs font-mono ml-2">
                                 <span>
                                     {formatTime(
                                         isSeeking ? seekTime : currentTime,
@@ -433,7 +432,7 @@ function VideoPlayer(props: VideoControlProps) {
                         {/* Fullscreen Button */}
                         <button
                             onClick={toggleFullscreen}
-                            className="p-2 hover:bg-white/10 rounded-full transition-colors"
+                            className="p-1.5 hover:bg-white/10 rounded-full transition-colors"
                             aria-label={
                                 isFullScreen
                                     ? "Exit fullscreen"
